@@ -1,18 +1,49 @@
-{
-    "root": true,
-    "parser": "@typescript-eslint/parser",
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "@typescript-eslint"
-    ],
-    "rules": {
-        "@typescript-eslint/semi": "warn",
-        "curly": "warn",
-        "eqeqeq": "warn",
-        "no-throw-literal": "warn",
-        "semi": "off"
-    }
+
+import * as vscode from 'vscode';
+
+/**
+ * Ativa a extensão e registra seus comandos.
+ */
+export function activate(context: vscode.ExtensionContext): void {
+    const openProjectCommand = vscode.commands.registerCommand(
+        'extension.openProject',
+        async (): Promise<void> => {
+            try {
+                const workspaceFolders = vscode.workspace.workspaceFolders;
+
+                if (!workspaceFolders || workspaceFolders.length === 0) {
+                    await vscode.window.showWarningMessage(
+                        'Nenhum projeto ou pasta está aberto no VS Code.'
+                    );
+                    return;
+                }
+
+                const projectPath = workspaceFolders[0].uri.fsPath;
+
+                await vscode.window.showInformationMessage(
+                    `Projeto aberto: ${projectPath}`
+                );
+
+                // Implemente aqui a lógica real para abrir ou processar o projeto.
+            } catch (error: unknown) {
+                const message =
+                    error instanceof Error
+                        ? error.message
+                        : 'Erro desconhecido.';
+
+                await vscode.window.showErrorMessage(
+                    `Não foi possível abrir o projeto: ${message}`
+                );
+            }
+        }
+    );
+
+    context.subscriptions.push(openProjectCommand);
+}
+
+/**
+ * Libera recursos adicionais, caso sejam criados pela extensão.
+ */
+export function deactivate(): void {
+    // Nenhuma limpeza adicional necessária neste exemplo.
 }
