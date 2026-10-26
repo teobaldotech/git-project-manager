@@ -1,156 +1,156 @@
 # Changelog
 
-## Next version
+Todas as alterações relevantes deste projeto são documentadas neste arquivo.
 
+## [Unreleased]
 
-## 1.8.0
+- Registre aqui as próximas alterações confirmadas.
+- Atualize a versão e a data de lançamento quando uma nova versão for publicada.
 
-- Fixed error that could happen when there are no `origin` remote - #63
-- Added publish to OpenVSX - #115
-- Updated dependencies
+## [1.8.0]
 
-## 1.7.1
+- Corrigido erro que poderia ocorrer quando não existia um remote `origin` (#63).
+- Adicionado suporte à publicação no Open VSX (#115).
+- Atualizadas as dependências.
 
-- Workaround for #88 where there were erros loading projects from home dir on Ubuntu
-- Optimization to getProjectPath - PR #87 by [@KyrychukD](https://github.com/KyrychukD)
+## [1.7.1]
 
-## 1.7.0
+- Adicionada solução alternativa para o problema #88, relacionado a erros ao carregar projetos do diretório pessoal no Ubuntu.
+- Otimizado o método `getProjectPath` (PR #87, por [@KyrychukD](https://github.com/KyrychukD)).
 
-- Issue #78 - Extension was pointing to the wrong config folder on VSCode-OSS - PR #79 by [@alyyasser](https://github.com/alyyasser)
-- Changed the shortcut to `gitProjectManager.openRecents` that overlaps with logout shortcut on MacOS - PR #82 by [@timlogemann](https://github.com/timlogemann)
-- Fixed the error that extension wasn't loading in some cases - PR #83 by [@Tedyst](https://github.com/Tedyst)
-- Isse #80 - Added option `displayProjectPath` that enables displaying project paths regardless of `checkRemoteOrigin value` - PR #84 by [@KyrychukD](https://github.com/KyrychukD)
+## [1.7.0]
 
-## 1.6.0
+- Corrigido o problema #78, em que a extensão apontava para o diretório de configuração incorreto no VS Code OSS (PR #79, por [@alyyasser](https://github.com/alyyasser)).
+- Alterado o atalho `gitProjectManager.openRecents`, que entrava em conflito com o atalho de logout no macOS (PR #82, por [@timlogemann](https://github.com/timlogemann)).
+- Corrigido um erro que impedia o carregamento da extensão em alguns casos (PR #83, por [@Tedyst](https://github.com/Tedyst)).
+- Adicionada a opção `displayProjectPath`, que permite exibir os caminhos dos projetos independentemente do valor de `checkRemoteOrigin` (issue #80, PR #84, por [@KyrychukD](https://github.com/KyrychukD)).
 
-- Closed #71 - When configured to open in new window, if there isn't a folder in current workspace, open in the current window
-- Added the default value of max depth recursion to readme - PR #74 br @andys8
-- Improved screen shot presentation - PR #70 by @Tyriar
-- Fixed a typo in Readme - PR #69 from @a-sync
+## [1.6.0]
 
-## 1.5.1
+- Corrigida a abertura de projetos em uma nova janela: quando não há uma pasta no workspace atual, o projeto é aberto na janela atual (#71).
+- Documentado o valor padrão de profundidade máxima da recursão no README (PR #74, por @andys8).
+- Melhorada a apresentação das capturas de tela (PR #70, por @Tyriar).
+- Corrigido um erro de digitação no README (PR #69, por @a-sync).
 
-- Fixed duplication when the same project is found in different base project paths - #68 by Tyriar
+## [1.5.1]
 
-## 1.5.0
+- Corrigida a duplicação de projetos encontrados em diferentes diretórios-base (issue #68, por @Tyriar).
 
-- Added support to Mercurial and SVN projects (Issue #62)
+## [1.5.0]
 
-## 1.4.0
+- Adicionado suporte a projetos Mercurial e SVN (issue #62).
 
-- Added compatibility with windows home path from PR #54 from [@DamonOehlman](https://github.com/DamonOehlman)
-- Fixed message related on issue #56 from [@DavidDeSloovere](https://github.com/DavidDeSloovere)
+## [1.4.0]
 
-## 1.3.2
+- Adicionada compatibilidade com o caminho do diretório pessoal do Windows (PR #54, por [@DamonOehlman](https://github.com/DamonOehlman)).
+- Corrigida mensagem relacionada à issue #56 (por [@DavidDeSloovere](https://github.com/DavidDeSloovere)).
 
-- Fixed typo in message from PR #51 thanks to [@aaron7](https://github.com/aaron7)
-- Fixed #50 Use the Insiders config directory when running VS Code Insiders (reported by [@Tyriar](https://github.com/Tyriar))
+## [1.3.2]
 
-## 1.3.1
+- Corrigido erro de digitação em uma mensagem (PR #51, por [@aaron7](https://github.com/aaron7)).
+- Corrigido o problema #50: utilização do diretório de configuração do VS Code Insiders (reportado por @Tyriar).
 
-- Fixed #50 where MaxDepthRecursion was not working (reported by [@Tyriar](https://github.com/Tyriar))
-- Fixed #49 where the repository info was not shown (reported by [@Tyriar](https://github.com/Tyriar))
+## [1.3.1]
 
-## 1.3.0
+- Corrigido o problema #50, em que `MaxDepthRecursion` não funcionava (reportado por @Tyriar).
+- Corrigido o problema #49, em que as informações do repositório não eram exibidas (reportado por @Tyriar).
 
-- Implemented a new configuration to stop looking deeper, after a project is found, ignoring MaxDepthRecursion (#47)
-- Refactored GitProjectLocator and GitProjectManager classes to receive configuration via injection, making test easier.
+## [1.3.0]
 
-## 1.2.1
+- Adicionada configuração para interromper a busca em níveis mais profundos após encontrar um projeto, ignorando `MaxDepthRecursion` (#47).
+- Refatoradas as classes `GitProjectLocator` e `GitProjectManager` para receberem configurações por injeção de dependência, facilitando os testes.
 
-- Fixed the info about the shortcut keys in mac (PR #45 thanks to @kaiwood)
-- Fixed #44 where **storeRepositoriesBetweenSessions** was not working to load from cache
+## [1.2.1]
 
-## 1.2.0
+- Corrigidas informações sobre os atalhos de teclado no macOS (PR #45, por @kaiwood).
+- Corrigido o problema #44, relacionado ao funcionamento de `storeRepositoriesBetweenSessions` ao carregar dados do cache.
 
-- Added support to subfolders (#34)
-- Lots of refactorings to improve stability and performance
+## [1.2.0]
 
-## 1.1.0
+- Adicionado suporte a subpastas (#34).
+- Realizadas diversas refatorações para melhorar a estabilidade e o desempenho.
 
-- Closes #39 Added a new command to open a project in a new window
-- Merged #38 from @zackschuster to fix a problem where the refresh info in status bar wasn't removed
+## [1.1.0]
 
-## 1.0.1
+- Adicionado comando para abrir um projeto em uma nova janela (#39).
+- Corrigido um problema em que as informações de atualização na barra de status não eram removidas (PR #38, por @zackschuster).
 
-- Fixed #36, removing the promise callback from execute command, thanks to [@Tyriar](https://github.com/Tyriar)
+## [1.0.1]
 
-## 1.0.0
+- Corrigido o problema #36, removendo o callback de promessa da execução do comando (por [@Tyriar](https://github.com/Tyriar)).
 
-- Added new command "GPM - Open Recent Git Project" that lets you open your most recent projects even faster than before
+## [1.0.0]
 
-## 0.1.18
+- Adicionado o comando `GPM - Open Recent Git Project`, permitindo abrir projetos Git recentes com mais rapidez.
 
-- [#32](https://github.com/felipecaputo/git-project-manager/issues/32) - Extension was not following symlinks
+## [0.1.18]
 
-### 0.1.17
+- Corrigido o problema [#32](https://github.com/felipecaputo/git-project-manager/issues/32), relacionado ao tratamento de links simbólicos.
 
-- Hot fix for 0.1.16, that was with a publish error
+### [0.1.17]
 
-### 0.1.16
+- Correção emergencial para o erro de publicação introduzido na versão 0.1.16.
 
-- [#31](https://github.com/felipecaputo/git-project-manager/issues/31) - Linux tilde alinas (~) was not considered an environment variable
+### [0.1.16]
 
-### 0.1.15
+- Corrigido o problema [#31](https://github.com/felipecaputo/git-project-manager/issues/31): o alias `~` do Linux não era considerado uma variável de ambiente.
 
-- Great contribuitions from [@Tyriar](https://github.com/Tyriar) with issues. Thanks a lot Daniel:
-  - [#24](https://github.com/felipecaputo/git-project-manager/issues/24) - Restored promised QuickPick after version 0.1.14 removed it
-  - [#21](https://github.com/felipecaputo/git-project-manager/issues/21) - Sorted project list
-  - [#16](https://github.com/felipecaputo/git-project-manager/issues/16) - Fixed behavior that project list was keeping old repos removed from config
-  - [#13](https://github.com/felipecaputo/git-project-manager/issues/13) - Parse environment variables in project folders config
-  - [#11](https://github.com/felipecaputo/git-project-manager/issues/11) - Auto refresh project list after configuration changed
+### [0.1.15]
 
-- [#10](https://github.com/felipecaputo/git-project-manager/issues/10) - Auto refresh project list after configuration changed
-- [#12](https://github.com/felipecaputo/git-project-manager/issues/12) [#14](https://github.com/felipecaputo/git-project-manager/issues/14) - UX improvements
+- Reconhecidas as contribuições de @Tyriar para a resolução de problemas:
+  - [#24](https://github.com/felipecaputo/git-project-manager/issues/24): restaurado o `QuickPick` baseado em promessas, removido na versão 0.1.14.
+  - [#21](https://github.com/felipecaputo/git-project-manager/issues/21): ordenada a lista de projetos.
+  - [#16](https://github.com/felipecaputo/git-project-manager/issues/16): corrigido o comportamento que mantinha repositórios removidos da configuração na lista de projetos.
+  - [#13](https://github.com/felipecaputo/git-project-manager/issues/13): adicionada a análise de variáveis de ambiente na configuração das pastas de projetos.
+  - [#11](https://github.com/felipecaputo/git-project-manager/issues/11): atualização automática da lista de projetos após alterações na configuração.
+- Registrada também a atualização automática da lista de projetos relacionada à [issue #10](https://github.com/felipecaputo/git-project-manager/issues/10).
+- Realizadas melhorias de experiência do usuário relacionadas às issues [#12](https://github.com/felipecaputo/git-project-manager/issues/12) e [#14](https://github.com/felipecaputo/git-project-manager/issues/14).
 
-### 0.1.14
+### [0.1.14]
 
-- Temporary fix to #8 and #9, ShowQuickPick is not working when receive promises. As a side efect, quick pick will not be shown until
-  all folders had been searched
+- Adicionada correção temporária para as issues #8 e #9: o `ShowQuickPick` não funcionava corretamente ao receber promessas. Como efeito colateral, a lista de seleção só era exibida após a conclusão da busca em todas as pastas.
 
-### 0.1.13
+### [0.1.13]
 
-- Hotfix for 0.1.12, that was not considering **gitProjectManager.openInNewWindow** configuration
+- Correção emergencial para o problema da versão 0.1.12, que não respeitava a configuração `gitProjectManager.openInNewWindow`.
 
-### 0.1.12
+### [0.1.12]
 
-- Now uses the new VSCode api to open folders, avoiding problems with path and configuration
-- Added configuration to define if the selected project will be opened in the same window or in a new window
+- Atualizada a API do VS Code utilizada para abrir pastas, evitando problemas com caminhos e configurações.
+- Adicionada configuração para escolher entre abrir o projeto na janela atual ou em uma nova janela.
 
-### 0.1.11
+### [0.1.11]
 
-- Now it only shows the folder name instead of the complete path, and also, if *checkRemoteOrigin* is
-  false, then it show the path as pick list description instead of remote origin
-- Changed the way we can configure codePath
+- Alterada a exibição para mostrar somente o nome da pasta em vez do caminho completo.
+- Quando `checkRemoteOrigin` é `false`, o caminho passa a ser exibido como descrição na lista de seleção, em vez da origem remota.
+- Alterada a forma de configurar `codePath`.
 
-### 0.1.10
+### [0.1.10]
 
-- Added new configuration "gitProjectManager.checkRemoteOrigin" that allows users to
-  not check remote repository origin to improve performance
+- Adicionada a configuração `gitProjectManager.checkRemoteOrigin`, que permite desativar a verificação da origem remota para melhorar o desempenho.
 
-### 0.1.9
+### [0.1.9]
 
-- Fixed error in dependency management in VSCode
+- Corrigido um erro no gerenciamento de dependências no VS Code.
 
-### 0.1.8
+### [0.1.8]
 
-- Improved error messages
+- Melhoradas as mensagens de erro.
 
-### 0.1.7
+### [0.1.7]
 
-- Fixed problem with VSCode configuration that changed array config default value
+- Corrigido um problema com a configuração do VS Code que alterava o valor padrão de uma configuração do tipo array.
 
-### 0.1.6
+### [0.1.6]
 
-- Fixed issue #2 that wasn't working on **0.1.5**
+- Corrigido o problema #2, que continuava sem funcionar na versão 0.1.5.
 
-### 0.1.5
+### [0.1.5]
 
-- Added two new configs to fix issue #2 and improve perfomance that are:
-  - maxDepthRecursion
-  - ignoredFolders
+- Adicionadas duas configurações para resolver o problema #2 e melhorar o desempenho:
+  - `maxDepthRecursion`
+  - `ignoredFolders`
 
-### 0.1.4
+### [0.1.4]
 
-- Partially fixed issue #1 (special thanks to @martinpengellyphillips) with PR #3
-  that allow to configure the code application path
+- Corrigido parcialmente o problema #1, com agradecimento a @martinpengellyphillips pela contribuição no PR #3, que permitiu configurar o caminho da aplicação de código.
