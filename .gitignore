@@ -1,41 +1,31 @@
-# Dependencies
-node_modules/
+repos:
+  # 1. Trava contra segredos e credenciais vazadas (Gitleaks)
+  - repo: https://github.com/gitleaks/gitleaks
+    rev: v8.18.2
+    hooks:
+      - id: gitleaks
 
-# Build output
-out/
-dist/
-coverage/
+  # 2. Verificações básicas de segurança e limpeza de arquivos
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      # Impede commit de chaves privadas (RSA, SSH, etc.)
+      - id: detect-private-key
+      # Impede commit direto em branches protegidas (opcional, ex: main/master)
+      - id: no-commit-to-branch
+        args: ['--branch', 'main', '--branch', 'master']
+      # Remove espaços em branco desnecessários no final das linhas
+      - id: trailing-whitespace
+      # Garante uma linha em branco no final de cada arquivo
+      - id: end-of-file-fixer
+      # Valida sintaxe de arquivos YAML e JSON
+      - id: check-yaml
+      # Impede commits de arquivos muito grandes
+      - id: check-added-large-files
+        args: ['--maxkb=500']
 
-# VS Code Extension packages
-*.vsix
-
-# Extension test environment
-.vscode-test/
-.vscode-test-web/
-
-# Logs
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-pnpm-debug.log*
-
-# TypeScript
-*.tsbuildinfo
-
-# Environment
-.env
-.env.*
-
-# IDEs
-.vscode/*
-!.vscode/extensions.json
-!.vscode/launch.json
-!.vscode/tasks.json
-!.vscode/settings.json
-
-.idea/
-
-# OS files
-.DS_Store
-Thumbs.db
+  # 3. Trava contra credenciais em arquivos .env (opcional)
+  - repo: https://github.com/dotenv-linter/dotenv-linter
+    rev: v3.3.0
+    hooks:
+      - id: dotenv-linter
