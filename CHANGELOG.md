@@ -12,11 +12,12 @@ Todas as alterações relevantes deste projeto são documentadas neste arquivo.
 ### Adicionado
 - Adicionada verificação de segurança no fluxo de publicação para evitar o vazamento inadvertido de credenciais e tokens.
 - Adicionada integração de hooks com `pre-commit` para validação local de arquivos sensíveis.
+- Adicionado script automatizado (`minimist-updater`) para atualização segura da dependência `minimist` para a versão `1.2.8` com preservação de backups e execução via `--ignore-scripts`.
 
 ### Corrigido
 - Corrigidas pequenas inconsistências no carregamento de configurações do workspace.
 
 ### Alterado
-- Atualizadas as dependências do projeto para as versões mais recentes.
+- Atualizadas as dependências do projeto para as versões mais recentes, incluindo auditoria de segurança via `npm audit`.
 
 ## [1.8.0]
