@@ -1,31 +1,23 @@
-repos:
-  # 1. Trava contra segredos e credenciais vazadas (Gitleaks)
-  - repo: https://github.com/gitleaks/gitleaks
-    rev: v8.18.2
-    hooks:
-      - id: gitleaks
-
-  # 2. Verificações básicas de segurança e limpeza de arquivos
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
-    hooks:
-      # Impede commit de chaves privadas (RSA, SSH, etc.)
-      - id: detect-private-key
-      # Impede commit direto em branches protegidas (opcional, ex: main/master)
-      - id: no-commit-to-branch
-        args: ['--branch', 'main', '--branch', 'master']
-      # Remove espaços em branco desnecessários no final das linhas
-      - id: trailing-whitespace
-      # Garante uma linha em branco no final de cada arquivo
-      - id: end-of-file-fixer
-      # Valida sintaxe de arquivos YAML e JSON
-      - id: check-yaml
-      # Impede commits de arquivos muito grandes
-      - id: check-added-large-files
-        args: ['--maxkb=500']
-
-  # 3. Trava contra credenciais em arquivos .env (opcional)
-  - repo: https://github.com/dotenv-linter/dotenv-linter
-    rev: v3.3.0
-    hooks:
-      - id: dotenv-linter
+{
+  "name": "meu-projeto-typescript",
+  "version": "1.0.0",
+  "description": "Projeto Node.js com TypeScript, Husky e Lint-Staged",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "dotenv-linter": "^3.3.0",
+    "eslint": "^8.56.0",
+    "husky": "^9.0.0",
+    "lint-staged": "^15.2.0",
+    "prettier": "^3.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  }
+}
