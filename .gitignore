@@ -10,6 +10,15 @@
     "typecheck": "tsc --noEmit",
     "prepare": "husky"
   },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,css}": [
+      "prettier --write"
+    ]
+  },
   "devDependencies": {
     "@types/node": "^20.11.0",
     "dotenv-linter": "^3.3.0",
